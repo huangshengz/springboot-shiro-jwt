@@ -1,24 +1,24 @@
 package com.rrg.gz.controller.exception;
 
+import org.apache.shiro.ShiroException;
+import org.apache.shiro.authc.AuthenticationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.nio.channels.AcceptPendingException;
-
 /**
- * 捕捉异常
- * @author huangsz  2018/10/20 0020
+ * @author ====> huangsz
+ * @date ====> 2019/7/26
  */
 @RestControllerAdvice
 public class ExceptionController {
 
-    /**
-     * 捕捉 CustomRealm 抛出的异常
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(AcceptPendingException.class)
-    public String handleShiroException(Exception e){
+    @ExceptionHandler(ShiroException.class)
+    public String ex500(Exception e){
+        return e.getMessage();
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public String tokenError(Exception e){
         return e.getMessage();
     }
 }

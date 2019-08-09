@@ -5,23 +5,24 @@ package com.rrg.gz.entity;
  */
 public class Role {
 
-    private int id;
+    private int roleId;
 
-    private String role;
+    private String roleName;
 
-    public int getId() {
-        return id;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
+
 }
